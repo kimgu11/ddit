@@ -20,8 +20,38 @@ DBMS(Data Base Management Service)
 데이터베이스 설계후 데이터 관리 소프트웨어 
 
 트랜잭션의 특징
-  . 원자성: 트랜잭션의 처리는 완전히 끝마치지 않을 경우에는 전혀 이루어지지 않은 것과 같아야 한다.
+  . 원자성(Atomicity): 트랜잭션의 처리는 완전히 끝마치지 않을 경우에는 전혀 이루어지지 않은 것과 같아야 한다.
             이러한 특성을 'All or Nothing' 이라한다
-  . 일관성: 트랜잭션들간의 영향이 한 방향으로만 전달되어야 한다.
-  . 고립성: 트랜잭션의 부분적인 상태를 다른 트랜잭션에 제공해서는 안된다.
-  . 지속성: 성공적인 트랜잭션의 수행 후에는 반드시 데이터베이스에 반영하여야 한다.
+  . 일관성(Consistency): 트랜잭션들간의 영향이 한 방향으로만 전달되어야 한다.
+  . 고립성(Isolation): 트랜잭션의 부분적인 상태를 다른 트랜잭션에 제공해서는 안된다.
+  . 지속성(Durability): 성공적인 트랜잭션의 수행 후에는 반드시 데이터베이스에 반영하여야 한다.
+
+테이블간 다대다 관계에 있을 때 이것을 논리모델에서는 일대다, 다대일, 일대일로 변경해야한다
+테이블간 관계에서 관계에 속성이 있을 경우 테이블로 만들어야 한다.
+
+자식 테이블에서 부모 테이블의 기본키를 참조 한다면 그것을 외래키라고 한다. 이때 참조 무결성이 이루어져야 한다.
+이때 부모 테이블에서 외래키는 칼럼에 들어간다.
+
+테이블을 릴레이션이라고 칭하고 테이블은 한개 또는 여러개의 Column, 0개 또는 여러개의 Row로 구성
+
+CREATE OR REPLACE VIEW V_SEMPLE AS
+    SELECT * FROM JOBS WHERE ROWNUM <= 10;
+    
+SELECT * FROM V_SEMPLE;
+VIEW를 만들고 JOB 칼럼에서 ROWNUM <= 10의 데이터를 불러와 SELECT한다.
+
+sql(Structed Query Language)명령어
+  . Query : - SELECT, 조회문
+  
+  . DML   : - INSERT
+            - UPDATE
+            - DELETE
+  
+  . DDL   : - CREATE
+            - ALTER
+            - DROP 등
+  
+  . DCL   : - GRANT
+            - REVOKE
+            - COMMIT
+            - ROLLBACK 등
