@@ -1,0 +1,91 @@
+변수 선언
+  . 자료형 변수명;
+  . 첫 번째 글자는 문자이거나 $, _이어야 하고 숫자로 시작할 수 없음
+  . 영어 대소문자를 구분
+  . 첫문자는 영어 소문자로 시작하되, 다른 단어가 붙을 경우 첫 문자를 대문자로함 *
+  . 변수에서 길이의 제한은 없다.
+  . 자바 예약어는 사용할 수 없다.
+
+  {}블록 블록 안에서만 변수가 작동 
+  블록 밖에서 블록 안에있는 변수는 사용하지 못함 블록 안에 일들은 블록이 종료 되면 없어짐?
+
+//		정수형
+//		1. byte : 1byte(-128 ~ 127)
+//		2. short: 2byte(-32768 ~ 32767)
+//		3. int  : 4byte(-2^31 ~ 2^31-1)
+//		4. long	: 8byte(-2^63 ~ 2^63-1)
+//				   데이터 끝에 L(l)을 추가
+		byte b1 = 127;
+		System.out.println("b1 = " + b1);
+//		오버플로우 발생
+		b1++;
+		System.out.println("b1 = " + b1);
+//		오류발생
+//		b1 = 128;
+		short s1 = 100;
+		System.out.println("s1 = " + s1);
+//		정수의 기본 자료형은 int이다. s1은 자바에서 int로 인식하여 
+//		아래의 변수 선언에서 int를 short로 변환할 수 없다는 오류 발생
+//		사용하기 위해서는 자료형을 short를 일일이 설정해줘야함
+//		short s2 = s1 + 10;
+		short s2 = (short) (s1 + 10);
+		System.out.println("s2 = " + s2);
+
+		int i1 = 100;
+		System.out.println("i1 = " + i1);
+		int var1 = 200;
+		int var2 = 0203; 	//0을 붙이면 8진수가 됨
+		int var3 = 0x74a;	//0x를 붙이면 16진수가 됨
+		int var4 = 0b11011;	//0b를 붙이면 2진수가 됨
+		System.out.println("var1 = "+var1);
+		System.out.println("var2 = "+var2);
+		System.out.println("var3 = "+var3);
+		System.out.println("var4 = "+var4);
+		
+//		int 범위를 넘어가지 않기 때문에 l을 붙일 필요가 없음
+		long l1 = 10000;
+		System.out.println("l1 = " + l1);
+//		그러나 l2는 int 범위를 넘어가기 때문에 데이터 뒤에 L(l)을 붙여줘야함
+		long l2 = 1000000000000l;
+		System.out.println("l2 = " + l2);
+//		long은 int 자료형보다 크기가 크기 때문에 자료형을 설정해줄 필요가 없음 
+		long l3 = l1 + 1000;
+		System.out.println("l3 = " + l3);
+
+//		실수형
+//		1. float : 4byte(부호 1bit, 지수 8bit, 가수 23bit)
+//		    	     데이터 끝에 f(F) 추가
+//		2. double: 8byte(부호 1bit, 지수 11bit, 가수 52bit)
+//				     실수형 기본 타입
+
+		float f1 = 3.141592f;
+		double d1 = 3.141592;
+
+//		정확도 범위가 다르기 때문에 두 값음 다른값이 나오게 됨
+		if (f1 == d1) {
+			System.out.println("같은갑");
+		} else {
+			System.out.println("다른값");
+		}
+
+//		논리형 : true / false
+//		1byte 조건문과 제어문의 실행 흐름을 변경하는데사용.
+		
+		boolean flag = false;
+		System.out.println("flag = " + flag);
+		
+		flag = (1<2);
+		System.out.println("flag = " + flag);
+
+//		char : 부호 없는 2byte 정수(0~65535)
+//		숫자 하나가 문자 하나랑 매칭됨.
+//		char c1 = 65;
+//		System.out.println(c1);
+//		char c2 = 97;
+//		System.out.println(c2);
+//		
+//		char c3 = '가';
+//		System.out.println((int)c3);
+		
+		char c4 = 'a';
+		char c5 = (char)(c4+1);
