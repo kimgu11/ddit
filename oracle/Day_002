@@ -1,0 +1,27 @@
+CRUD
+  . Create
+  . Read
+  . Update
+  . Delet
+
+DDL: Data Definition Language
+DML: Data Manipulation Language
+DCL: Data Control Language
+SEARCH: ? 검색?
+
+데이터의 중복시 이상이 발생함(중복을 완전히 제거는 힘듦)
+  . 삽입이상
+  . 갱신(업데이트)이상
+  . 삭제이상
+
+관계형 데이터베이스에서 항목 삭제시 참조된 관계 테이블에서 오류 발생 -> 삭제x
+
+DBMS(Data Base Management Service)
+데이터베이스 설계후 데이터 관리 소프트웨어 
+
+트랜잭션의 특징
+  . 원자성: 트랜잭션의 처리는 완전히 끝마치지 않을 경우에는 전혀 이루어지지 않은 것과 같아야 한다.
+            이러한 특성을 'All or Nothing' 이라한다
+  . 일관성: 트랜잭션들간의 영향이 한 방향으로만 전달되어야 한다.
+  . 고립성: 트랜잭션의 부분적인 상태를 다른 트랜잭션에 제공해서는 안된다.
+  . 지속성: 성공적인 트랜잭션의 수행 후에는 반드시 데이터베이스에 반영하여야 한다.
