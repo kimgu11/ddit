@@ -1,0 +1,287 @@
+package kr.or.ddit.study03;
+
+import java.util.Scanner;
+
+public class BinaryOperator {
+	Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) {
+		BinaryOperator obj = new BinaryOperator();
+		// 이항연산자 : 대부분의 연산자
+		// 산술 연산자, 관계 연산자, 논리 연산자, 비트 연산자, 대입 연산자
+//		obj.method1();
+//		obj.method2();
+//		obj.method3();
+//		obj.method4();
+//		obj.method5();
+		obj.method6();
+		
+	}
+	
+	public void method6() {
+		// 대입 연산자
+		// =, *=, /=, +=, -=, %=
+		
+		int a = 10;
+		int b = 4;
+		
+		System.out.println("a+=b : " +(a+=b));
+		System.out.println("a-=b : " +(a-=b));
+		System.out.println("a/=b : " +(a/=b));
+		System.out.println("a*=b : " +(a*=b));
+		System.out.println("a%=b : " +(a%=b));
+		System.out.println("a=b : " +(a=b));
+		
+	}
+
+	
+	public void method5() {
+		// shift operator
+		// >> << >>>
+		
+		System.out.println(12>>2);
+		System.out.println(12<<2);
+	}
+	
+	public void method4() {
+		// & | ^ ~
+		//		    &			|
+		// 45 : 00101101	00101101
+		// 25 : 00011001	00011001
+		//		00001001	00111101
+		
+		int a = 45;
+		int b = 25;
+		System.out.println(a&b);
+		System.out.println(a|b);
+		System.out.println(a^b);
+		System.out.println(~a);
+	}
+	
+	public void method3() {
+		// 논리 연산자
+		// 종류 : &&, ||, !
+		// &&(논리곱) a, b 중 하나라도 거짓이면 거짓
+		// ||(논리합) a, b 중 하나라도 참이면 참.
+		boolean a = true;
+		boolean b = false;
+		
+//		System.out.println(a&&b);
+//		System.out.println(a||b);
+//		System.out.println(!a||b);
+		
+		// B 학점을 부여
+		System.out.println("점수입력");
+		int score1 = sc.nextInt();
+		if(score1 >= 90) System.out.println("A");
+		if(score1 < 90 && score1 >=80) System.out.println("B");
+		if(score1 <80) System.out.println("F");
+	}
+	
+	public void method2 () {
+		// 관계 연산자.
+		// 종류 : >, <, ==, <=, >=, !=
+		System.out.println("점수 입력");
+		int score1 = sc.nextInt();
+		int score2 = sc.nextInt();
+		if(score1 + score2 >= 90) {
+			System.out.println("A");
+		}if(score1 + score2 < 60) {
+			System.out.println("F");
+		}
+	}
+	
+	public void method1 () {
+		// 산술연산자
+		// 종류 : +-*%
+		// 사칙연산과 마찬가지로 /, *가 우선 적용된다.
+		
+		int a = 5;
+		int b = 3;
+		System.out.println("+\t"+ (a+b));
+		System.out.println("-\t"+ (a-b));
+		System.out.println("/\t"+ (a/b));
+		System.out.println("*\t"+ (a*b));
+		System.out.println("%\0t"+ (a%b));
+	}
+}
+
+package kr.or.ddit.study03;
+
+import java.util.Scanner;
+
+public class ThinomiaOperatior {
+	Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		ThinomiaOperatior obj = new ThinomiaOperatior();
+		
+//		obj.method1();
+//		obj.method2();
+		obj.method3();
+	}
+	
+	public void method3() {
+		
+		System.out.println("a값을 입력하시오");
+		int a = sc.nextInt();
+		System.out.println("b값을 입력하시오");
+		int b = sc.nextInt();
+		
+		// a값이 짝수라면 a+b
+		// a값이 홀수라면 a*b
+		
+		int result = a%2 == 0 ? a+b : a*b ;
+		
+		System.out.println("a의 값이 짝수라면 a+b\na의 값이 홀수라면 a*b\n결과값: "+result);
+	}
+	
+	public void method2() {
+		// 18세 이상일 경우 성년 미만일 경우 미성년자를 출력하시오
+		//
+		System.out.println("나이를 입력하시오.");
+		int age = sc.nextInt();
+//		String result = age >= 18 ? "성년" : "미성년자";
+		String result = age < 18 ? "미성년자" : "성년";
+		System.out.println(result);
+	}
+	
+	public void method1() {
+		// 삼항연산자: 3개의 피연산자를 필요로 하는 연산
+		// 			삼항연산자는 ? 앞의 조건식의 결과에 따라 
+		//			콜론 앞뒤의 피연산자가 선택됨. 
+		// 			조건 연산식이라고도 함.
+		
+		String str = false ? "참" : "거짓";
+				
+		System.out.println(str);							
+	}
+
+}
+
+package kr.or.ddit.study03;
+
+import java.util.Scanner;
+
+public class UnaryOperator {
+	Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		UnaryOperator obj = new UnaryOperator();
+		// 단항 연산자
+		// 부호 연산자, 증감 연산자, 논리 연산자
+//		obj.method1();
+		obj.method2();
+		
+	}
+	
+	public void method2() {
+		// 증감 연산자
+		// 종류 : ++, --
+		// ++변수 : 다른 연산을 수행하기전에 1을 증가시킴
+		// 변수++ : 다른 연산을 수행한후에 1을 증가시킴
+		// --변수 : 다른 연산을 수행하기전에 1을 감소시킴
+		// 변수-- : 다른 연산을 수행한후에 1을 감소시킴
+		
+		int val;
+		int res;
+		
+		val = 10;
+//		res = ++val;
+//		val += 1;
+		val = val + 1;
+		res = val;
+		System.out.println("val : "+val);
+		System.out.println("res : "+res);
+		
+		val = 10;
+//		res = val++;
+		res = val;
+		val += 1;
+		System.out.println("val : "+val);
+		System.out.println("res : "+res);
+		
+		val = 10;
+//		res = --val;
+		val -= 1;
+		res = val;
+		System.out.println("val : "+val);
+		System.out.println("res : "+res);
+		
+		val = 10;
+//		res = val--;
+		res = val;
+		val -= 1;
+		System.out.println("val : "+val);
+		System.out.println("res : "+res);
+
+//		int a = 0;
+//		while(a < 10) {
+//			System.out.println(a);
+//			a++;
+//		}
+	}
+	
+	public void method1() {
+		// 부호 연산자
+		int a = 10;
+		int num = -a;
+		System.out.println(num);
+		
+	}
+}
+
+package kr.or.ddit.homework;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class HomeWork03 {
+	Scanner sc = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		HomeWork03 obj = new HomeWork03();
+//		obj.question1();
+		obj.question2();
+	}
+	
+	public void question2() {
+		// 윤년인지 구하기
+		// 4의 배수 이면서 100의 배수가 아닌것.
+		// 혹은 400의 배수인것
+		// ex) 윤년 : 1992 1996 2000 2004
+		//	     평년 : 1800 1900 1993 1994 1995
+		
+		System.out.println("년도 입력");
+		int year = sc.nextInt();
+		if((year%4 == 0 && year%100 != 0) || year%400 ==0 ) {
+			System.out.println("윤년입니다. ");
+		}else {
+			System.out.println("평년입니다. ");
+		}
+	}
+	
+	public void question1() {
+		// 변수에 랜덤한 숫자 1~50 숫자가 들어 있다.
+		// if문 조건식을 완성하여 해당 숫자를 맞추는 
+		// 프로그램을 완성하시오.
+		
+		// 1번 시행시 cnt값이 1 증가 되어야함
+		Random random = new Random();
+		int question = random.nextInt(50)+1;
+		int cnt = 0;
+		
+		while(true) {
+			System.out.println("정수를 입력하세요");
+			int ans = sc.nextInt();
+			cnt++;
+			if(ans>question) System.out.println("더 작은수를 입력");
+			if(ans<question) System.out.println("더 큰수를 입력");
+			if(ans == question) {
+				System.out.println("정답입니다.");
+				System.out.println(cnt+"회 시행되었습니다.");
+				break;
+			}
+		}
+		
+	}
+}
